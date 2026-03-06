@@ -1,0 +1,687 @@
+INFO:     Will watch for changes in these directories: ['/Users/robin/Documents/My Study/ai测试/antigravity/ai 招聘项目/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [33216] using StatReload
+/Users/robin/Documents/My Study/ai测试/antigravity/ai 招聘项目/backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/robin/Documents/My Study/ai测试/antigravity/ai 招聘项目/backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/robin/Documents/My Study/ai测试/antigravity/ai 招聘项目/backend/venv/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/robin/Documents/My Study/ai测试/antigravity/ai 招聘项目/backend/venv/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+INFO:     Started server process [33299]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:62416 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62418 - "GET /api/v1/jobs HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62418 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62416 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62618 - "GET /api/v1/jobs HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62618 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62670 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62670 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62670 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62670 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62670 - "GET /api/v1/jobs HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62670 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62925 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62925 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63166 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63166 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63365 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63365 - "GET /api/v1/jobs HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63365 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63369 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63635 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63635 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65414 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65414 - "GET /api/v1/jobs HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65416 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65414 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54383 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54383 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55801 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55801 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56689 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56689 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57415 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57415 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59026 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59026 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60543 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60543 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60543 - "GET /api/v1/jobs HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60543 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62429 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62429 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62658 - "OPTIONS /api/v1/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62658 - "POST /api/v1/jobs HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62658 - "OPTIONS /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62658 - "POST /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62658 - "GET /api/v1/jobs HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62658 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62658 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62658 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62658 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62658 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62906 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62906 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63053 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63053 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63289 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63289 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63514 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63514 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63693 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63693 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63807 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63807 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63946 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63946 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64127 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64127 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64286 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64286 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64416 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64416 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64532 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64532 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64682 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64682 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64968 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64968 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65079 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65079 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65274 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65274 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65478 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65478 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49440 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49440 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49587 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49587 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49860 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49860 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49946 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49946 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50147 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50147 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50303 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50303 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50911 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50911 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51124 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51124 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51311 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51311 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51481 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51481 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51712 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51712 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51884 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51884 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52059 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52059 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52199 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52199 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52376 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52376 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52596 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52596 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52785 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52785 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53006 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53006 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53253 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53253 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53429 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53588 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53588 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53870 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53870 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54094 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54094 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54224 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54224 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54447 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54447 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54695 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54695 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55114 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55114 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55273 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55273 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55473 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55473 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55637 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55637 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55772 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55772 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56137 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56137 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56496 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56496 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56700 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56700 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56968 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56968 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57311 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57311 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57469 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57469 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57700 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57700 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57839 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57839 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57945 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57945 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58109 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58109 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58267 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58267 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58406 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58406 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58521 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58521 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58656 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58898 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58898 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59169 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59169 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59406 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59406 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59541 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59541 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59723 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59723 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59842 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59842 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59996 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59996 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60194 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60194 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60372 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60372 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60541 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60541 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60692 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60692 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60954 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60954 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61113 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61113 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61375 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61375 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61544 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61544 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61701 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61701 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61883 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61883 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62059 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62059 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62232 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62232 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62404 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62404 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62584 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62584 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62812 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62812 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63009 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63009 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63242 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63242 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63370 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63370 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63567 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63567 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63848 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63848 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64007 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64007 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64362 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64362 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64819 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64819 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65103 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65103 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65346 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65346 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65530 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65530 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49351 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49351 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49444 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49444 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49602 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49602 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49688 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49688 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49951 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49951 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50078 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50078 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50255 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50255 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50425 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50425 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50689 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50689 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50846 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50846 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51054 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51054 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51236 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51236 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51401 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51401 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51523 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51523 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51741 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51741 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51861 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51861 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52092 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52092 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52255 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52255 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52362 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52362 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52531 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52531 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52688 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52688 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52922 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52922 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53154 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53154 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53315 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53315 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53449 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53449 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53605 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53605 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53769 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53769 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53956 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53956 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54170 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54170 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54471 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54471 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54610 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54610 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55029 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55029 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55216 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55216 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55399 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55399 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55505 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55505 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55600 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55600 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55772 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55772 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55987 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55987 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56319 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56319 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56462 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56462 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56598 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56598 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56736 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56736 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56898 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56898 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57059 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57059 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57184 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57184 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57277 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57277 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57453 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57453 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57559 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57559 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57781 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57781 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57960 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57960 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58122 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58122 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58291 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58291 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58571 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58571 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58907 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58907 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59092 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59092 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59380 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59380 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59507 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59507 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59836 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59836 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60007 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60007 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60160 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60160 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60288 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60288 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60473 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60473 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60660 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60660 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60803 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60803 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60943 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60943 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61093 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61093 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61246 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61246 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61444 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61444 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61747 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61747 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61903 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61903 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62086 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62086 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62218 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62218 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62359 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62359 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62527 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62527 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62820 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62820 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62933 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62933 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63097 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63097 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63236 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63236 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63470 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63470 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63584 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63584 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63728 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63728 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63813 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63813 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63972 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63972 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64051 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64051 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64181 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64181 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64353 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64353 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64503 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64503 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64679 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64679 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64860 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64860 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65201 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65201 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65318 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65318 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49217 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49217 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49382 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49382 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49551 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49551 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49686 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49686 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49933 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49933 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50133 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50133 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50410 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50410 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50684 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50684 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50889 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50889 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51130 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51130 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51486 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51486 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51787 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51787 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52441 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52441 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52719 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52719 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53066 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53066 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53298 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53298 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53448 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53448 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53667 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53667 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53890 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53890 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54085 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54085 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54238 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54238 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54472 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54472 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54617 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54617 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54799 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54799 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54960 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54960 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55147 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55147 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55335 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55335 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55586 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55586 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55754 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55754 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55966 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55966 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56227 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56227 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56415 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56415 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56539 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56539 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56855 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56855 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57018 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57018 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57223 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57223 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57568 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57568 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57853 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57853 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58133 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58133 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58393 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58393 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58576 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58576 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58752 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58752 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58988 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58988 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59214 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59214 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59418 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59418 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59621 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59621 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59814 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59814 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59998 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59998 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60265 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60265 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60433 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60433 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60615 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60615 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60773 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60773 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60965 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61159 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61159 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61382 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61382 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61564 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61564 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61727 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61727 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61914 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61914 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62138 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62138 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62354 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62354 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62572 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62572 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62741 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62741 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62948 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62948 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63113 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63113 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63248 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63248 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63400 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63400 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63566 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63566 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63831 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63831 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64006 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64006 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64358 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64358 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64511 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64511 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64700 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64700 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64924 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64924 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65169 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65169 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65377 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65377 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49223 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49223 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49347 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49347 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49691 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49691 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49898 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49898 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50180 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50180 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50505 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50505 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50782 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50782 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51092 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51092 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51312 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51312 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51690 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51690 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51859 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51859 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52090 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52090 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52264 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52264 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52399 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52399 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52752 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52752 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52907 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52907 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53151 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53151 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53286 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53286 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53419 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53419 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53552 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53552 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53747 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53747 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53996 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53996 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54355 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54355 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54540 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54540 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54768 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54768 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54948 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55244 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55244 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55532 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55532 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55724 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55724 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55853 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55853 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56011 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56011 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56194 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56194 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56463 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56463 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56769 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56769 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57080 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57080 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57349 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57349 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57544 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57544 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57686 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57686 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57936 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57936 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58121 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58121 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58557 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58557 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58798 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58798 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59141 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59141 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59428 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59428 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59659 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59659 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59887 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59887 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60158 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60158 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60237 - "GET /api/v1/notifications HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60237 - "GET /api/v1/notifications/ HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [33299]
+INFO:     Stopping reloader process [33216]
