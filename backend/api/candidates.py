@@ -44,9 +44,62 @@ async def upload_resume(
         
     ai_parsed_data = extract_resume_info(raw_text)
     
+    # Save to database
+    from models.domain import Candidate, ProcessStatusEnum
+    
+    # Extract mapped data from AI result (assuming a specific structure, if fails defaults to string)
+    # The current extractor returns a dict. We'll extract basic fields safely
+    name = ai_parsed_data.get("name", "Unknown")
+    email = ai_parsed_data.get("email", "")
+    phone = ai_parsed_data.get("phone", "")
+    education = str(ai_parsed_data.get("education", ""))
+    experience = str(ai_parsed_data.get("experience", ""))
+    skills_list = ai_parsed_data.get("skills", [])
+    skills = ", ".join(skills_list) if isinstance(skills_list, list) else str(skills_list)
+    
+    db_candidate = Candidate(
+        name=name,
+        email=email,
+        phone=phone,
+        resume_url=file_path,
+        education=education,
+        experience=experience,
+        skills=skills,
+        status=ProcessStatusEnum.NEW
+    )
+    db.add(db_candidate)
+    db.commit()
+    db.refresh(db_candidate)
+    
     return {
-        "message": "File parsed successfully",
+        "message": "File parsed and saved successfully",
         "file_name": file.filename,
-        "saved_path": file_path,
+        "candidate_id": db_candidate.id,
         "parsed_data": ai_parsed_data
     }
+
+@router.get("/", response_model=list)
+def get_candidates(job_id: int = None, db: Session = Depends(get_db)):
+    """
+    Get all candidates, optionally filtering by job_id.
+    """
+    from models.domain import Candidate
+    query = db.query(Candidate)
+    if job_id:
+        query = query.filter(Candidate.job_id == job_id)
+        
+    candidates = query.order_by(Candidate.created_at.desc()).all()
+    # Pydantic serialization will be handled by response_model if we add it, or returning raw dicts/objects works in FastAPI directly
+    return candidates
+
+@router.get("/{candidate_id}")
+def get_candidate(candidate_id: int, db: Session = Depends(get_db)):
+    """
+    Get specific candidate details
+    """
+    from models.domain import Candidate
+    candidate = db.query(Candidate).filter(Candidate.id == candidate_id).first()
+    if not candidate:
+        raise HTTPException(status_code=404, detail="Candidate not found")
+        
+    return candidate

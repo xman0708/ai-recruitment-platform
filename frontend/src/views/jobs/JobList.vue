@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { Search, Plus, MoreHorizontal, Clock, Users } from 'lucide-vue-next'
-import axios from 'axios'
+import request from '@/utils/request'
 import { ElMessage } from 'element-plus'
 
 interface Job {
@@ -31,8 +31,8 @@ const newJobForm = ref({
 const fetchJobs = async () => {
     isLoading.value = true
     try {
-        const res = await axios.get('http://localhost:8000/api/v1/jobs')
-        jobs.value = res.data
+        const data = await request.get('/jobs')
+        jobs.value = data as unknown as Job[]
     } catch (e) {
         ElMessage.error('Failed to load jobs')
         console.error(e)
@@ -53,7 +53,7 @@ const handleCreate = async () => {
 
   isSubmitting.value = true
   try {
-      await axios.post('http://localhost:8000/api/v1/jobs', {
+      await request.post('/jobs', {
           title: newJobForm.value.title,
           department: newJobForm.value.department || '',
           description: newJobForm.value.description,

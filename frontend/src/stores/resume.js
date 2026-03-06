@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
+import request from '@/utils/request'
 
 export const useResumeStore = defineStore('resume', {
     state: () => ({
@@ -17,15 +17,16 @@ export const useResumeStore = defineStore('resume', {
             formData.append('file', file)
 
             try {
-                const response = await axios.post('http://localhost:8000/api/v1/candidates/upload', formData, {
+                const response = await request.post('/candidates/upload', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
                 })
 
-                // Response structure from backend: { message, file_name, saved_path, parsed_data }
-                const result = response.data.parsed_data
+                // Response structure from backend: { message, file_name, candidate_id, parsed_data }
+                const result = response.parsed_data
                 result.sourceFile = file.name
+                result.candidateId = response.candidate_id
 
                 this.parsedResults.push(result)
 
