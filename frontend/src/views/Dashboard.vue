@@ -1,11 +1,47 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { Users, Briefcase, ChartBar, CheckCircle } from 'lucide-vue-next'
+import request from '@/utils/request'
+import { ElMessage } from 'element-plus'
 
-const stats = [
-  { name: '活跃职位', value: '12', icon: Briefcase, color: 'text-blue-400', bg: 'bg-blue-400/10' },
-  { name: '待初筛简历', value: '48', icon: Users, color: 'text-indigo-400', bg: 'bg-indigo-400/10' },
-  { name: '待安排面试', value: '16', icon: ChartBar, color: 'text-amber-400', bg: 'bg-amber-400/10' },
-  { name: '本周发放 Offer', value: '5', icon: CheckCircle, color: 'text-emerald-400', bg: 'bg-emerald-400/10' }
+interface DashboardStats {
+  active_jobs: number
+  new_candidates: number
+  pending_interviews: number
+  offers_this_week: number
+}
+
+const statsData = ref<DashboardStats>({
+  active_jobs: 0,
+  new_candidates: 0,
+  pending_interviews: 0,
+  offers_this_week: 0
+})
+
+const isLoading = ref(false)
+
+const fetchStats = async () => {
+  isLoading.value = true
+  try {
+    const data = await request.get('/dashboard/stats')
+    statsData.value = data as unknown as DashboardStats
+  } catch (e) {
+    console.error('Failed to load dashboard stats:', e)
+    ElMessage.error('无法加载仪表盘数据')
+  } finally {
+    isLoading.value = false
+  }
+}
+
+onMounted(() => {
+  fetchStats()
+})
+
+const getStatsArray = () => [
+  { name: '活跃职位', value: statsData.value.active_jobs, icon: Briefcase, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+  { name: '待初筛简历', value: statsData.value.new_candidates, icon: Users, color: 'text-indigo-400', bg: 'bg-indigo-400/10' },
+  { name: '待安排面试', value: statsData.value.pending_interviews, icon: ChartBar, color: 'text-amber-400', bg: 'bg-amber-400/10' },
+  { name: '本周发放 Offer', value: statsData.value.offers_this_week, icon: CheckCircle, color: 'text-emerald-400', bg: 'bg-emerald-400/10' }
 ]
 </script>
 
@@ -22,8 +58,8 @@ const stats = [
     </div>
 
     <!-- Stats Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div v-for="stat in stats" :key="stat.name" 
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" v-loading="isLoading">
+      <div v-for="stat in getStatsArray()" :key="stat.name" 
            class="bg-surface border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition-colors shadow-sm">
         <div class="flex items-center gap-4">
           <div :class="['w-12 h-12 rounded-lg flex items-center justify-center', stat.bg]">

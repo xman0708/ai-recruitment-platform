@@ -4,8 +4,7 @@ from api.candidates import router as candidates_router
 from api.jobs import router as jobs_router
 from api.interviews import router as interviews_router
 from api.notifications import router as notifications_router
-from pydantic import BaseModel
-from ai.extractor import extract_resume_info
+from api.dashboard import router as dashboard_router
 
 app = FastAPI(
     title="AI Recruitment Platform API",
@@ -26,6 +25,7 @@ app.add_middleware(
 )
 
 # Include routers
+app.include_router(dashboard_router, prefix="/api/v1/dashboard", tags=["Dashboard"])
 app.include_router(candidates_router, prefix="/api/v1/candidates", tags=["Candidates"])
 app.include_router(jobs_router, prefix="/api/v1/jobs", tags=["Jobs"])
 app.include_router(interviews_router, prefix="/api/v1/interviews", tags=["Interviews"])

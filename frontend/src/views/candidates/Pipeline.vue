@@ -1,53 +1,52 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { UploadCloud, Search, MoreHorizontal, Sparkles, Filter } from 'lucide-vue-next'
-// Note: In a real app we'd use vue-draggable-next for real drag-and-drop
+import { ref, onMounted } from 'vue'
+import { UploadCloud, MoreHorizontal, Sparkles, Filter } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
+import request from '@/utils/request'
+import { ElMessage } from 'element-plus'
 
 const router = useRouter()
 
 const columns = ref([
-  { id: 'NEW', title: '新投递 / 解析中', color: 'border-blue-500', bg: 'bg-blue-500/10' },
-  { id: 'AI_SCREENED', title: 'AI 初筛完成', color: 'border-emerald-500', bg: 'bg-emerald-500/10' },
-  { id: 'INTERVIEW_PENDING', title: '待安排面试', color: 'border-amber-500', bg: 'bg-amber-500/10' },
-  { id: 'INTERVIEWING', title: '面试中', color: 'border-purple-500', bg: 'bg-purple-500/10' },
-  { id: 'OFFERED', title: '录用待入职', color: 'border-pink-500', bg: 'bg-pink-500/10' },
+  { id: 'new', title: '新投递 / 解析中', color: 'border-blue-500', bg: 'bg-blue-500/10' },
+  { id: 'screening', title: 'AI 初筛完成', color: 'border-emerald-500', bg: 'bg-emerald-500/10' },
+  { id: 'interview', title: '面试中', color: 'border-purple-500', bg: 'bg-purple-500/10' },
+  { id: 'offer', title: '录用待入职', color: 'border-pink-500', bg: 'bg-pink-500/10' },
+  { id: 'rejected', title: '已淘汰', color: 'border-zinc-500', bg: 'bg-zinc-500/10' },
 ])
 
-const candidates = ref([
-  { id: 'CND-001', name: '李晓明', job: '高级前端开发工程师（Vue3）', status: 'AI_SCREENED', score: 92, match: '高匹配', tag: 'A', exp: '5年', edu: '本科' },
-  { id: 'CND-002', name: '张伟', job: '高级前端开发工程师（Vue3）', status: 'NEW', score: null, match: null, tag: null, exp: '3年', edu: '硕士' },
-  { id: 'CND-003', name: '王梦琪', job: 'Python 后端架构师', status: 'INTERVIEW_PENDING', score: 88, match: '匹配', tag: 'B+', exp: '8年', edu: '博士' },
-  { id: 'CND-004', name: '刘洋', job: 'AI 算法工程师 (LLM 方向)', status: 'INTERVIEWING', score: 95, match: '极高匹配', tag: 'S', exp: '4年', edu: '硕士' },
-  { id: 'CND-005', name: '陈思宇', job: '高级前端开发工程师（Vue3）', status: 'AI_SCREENED', score: 75, match: '需斟酌', tag: 'C', exp: '2年', edu: '本科' },
-])
+const candidates = ref<any[]>([])
+const isLoading = ref(false)
+
+const fetchCandidates = async () => {
+    isLoading.value = true
+    try {
+        const data = await request.get('/candidates/')
+        candidates.value = data as unknown as any[]
+    } catch(e) {
+        ElMessage.error('Failed to fetch candidates pipeline')
+        console.error(e)
+    } finally {
+        isLoading.value = false
+    }
+}
+
+onMounted(() => {
+    fetchCandidates()
+})
 
 const getCandidatesByStatus = (status: string) => {
   return candidates.value.filter(c => c.status === status)
 }
 
-const isUploading = ref(false)
 const onFileDrop = () => {
-  isUploading.value = true
-  setTimeout(() => {
-    isUploading.value = false
-    candidates.value.push({
-      id: `CND-00${candidates.value.length + 1}`,
-      name: '解析中...',
-      job: '待定',
-      status: 'NEW',
-      score: null,
-      match: null,
-      tag: null,
-      exp: '-',
-      edu: '-'
-    })
-  }, 1500)
+  router.push('/upload')
 }
 
-const viewCandidate = (id: string) => {
+const viewCandidate = (id: number) => {
   // Navigation to detail
-  router.push(`/candidates/${id}`)
+  // router.push(`/candidates/${id}`)
+  ElMessage.info(`Coming soon: View details for candidate ID ${id}`)
 }
 </script>
 
@@ -69,22 +68,6 @@ const viewCandidate = (id: string) => {
         </el-button>
       </div>
     </div>
-
-    <!-- Upload Progress Toast Simulated -->
-    <transition name="el-zoom-in-top">
-      <div v-if="isUploading" class="bg-surface border border-primary-500/50 rounded-lg p-3 flex items-center justify-between shadow-[0_0_15px_rgba(59,130,246,0.15)] mb-2">
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-full bg-primary-500/20 flex items-center justify-center animate-spin">
-            <Sparkles class="w-4 h-4 text-primary-400" />
-          </div>
-          <div>
-            <div class="text-sm font-medium text-white">AI 正在全力解析 3 份新简历中...</div>
-            <div class="text-xs text-zinc-400">正在提取候选人经历、技能并与当前 JD 匹配打分</div>
-          </div>
-        </div>
-        <div class="text-sm font-medium text-primary-400">45%</div>
-      </div>
-    </transition>
 
     <!-- Kanban Board -->
     <div class="flex-1 overflow-x-auto pb-4">
