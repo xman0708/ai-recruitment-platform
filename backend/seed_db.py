@@ -19,10 +19,16 @@ def seed_db():
         db.add_all([job1, job2])
         db.commit()
         
-        c1 = Candidate(name="李晓明", job_id=1, status=ProcessStatusEnum.SCREENING, ai_score=92, ai_reasoning="匹配度高", exp="5年", edu="本科")
-        c2 = Candidate(name="王梦琪", job_id=2, status=ProcessStatusEnum.INTERVIEW, ai_score=88, ai_reasoning="匹配", exp="8年", edu="博士")
-        c3 = Candidate(name="张三", job_id=1, status=ProcessStatusEnum.NEW, exp="3年", edu="硕士")
+        c1 = Candidate(name="李晓明", job_id=1, status=ProcessStatusEnum.SCREENING, ai_score=92, ai_reasoning="匹配度高", experience="5年", education="本科")
+        c2 = Candidate(name="王梦琪", job_id=2, status=ProcessStatusEnum.INTERVIEW, ai_score=88, ai_reasoning="匹配", experience="8年", education="博士")
+        c3 = Candidate(name="张三", job_id=1, status=ProcessStatusEnum.NEW, experience="3年", education="硕士")
         db.add_all([c1, c2, c3])
+        db.commit()
+        
+        from models.domain import Interview, InterviewStatusEnum
+        i1 = Interview(candidate_id=c1.id, interviewer_id=admin.id, type="视频面试", scheduled_time="今天 14:00 - 15:00", location_or_link="https://meeting.tencent.com/p/123456789", status=InterviewStatusEnum.SCHEDULED)
+        i2 = Interview(candidate_id=c2.id, interviewer_id=admin.id, type="线下面试", scheduled_time="昨天 16:00 - 17:00", location_or_link="总部大楼 A 座 302 会议室", status=InterviewStatusEnum.COMPLETED, feedback_score=4, feedback_content="技术非常扎实", recommendation="HIRE")
+        db.add_all([i1, i2])
         db.commit()
         print("Done.")
     else:

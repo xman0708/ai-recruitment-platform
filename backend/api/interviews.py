@@ -1,61 +1,69 @@
-from fastapi import APIRouter
-from pydantic import BaseModel
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
 from typing import List
-import uuid
-import datetime
+from database.session import get_db
+from models.domain import Interview, Candidate, Notification, NotificationTypeEnum, ProcessStatusEnum, User, RoleEnum
+from schemas.interview import InterviewCreate, InterviewOut, InterviewFeedback
 
 router = APIRouter()
 
-# Mock DB for Interviews
-interviews_db = []
-
-class InterviewSchedule(BaseModel):
-    application_id: str
-    interviewer_id: str
-    scheduled_time: str
-    location_or_link: str
-
-class InterviewResponse(InterviewSchedule):
-    id: str
-    status: str
-    feedback_score: int = None
-    feedback_content: str = None
-
-@router.post("/", response_model=InterviewResponse)
-def schedule_interview(interview: InterviewSchedule):
+@router.post("/", response_model=InterviewOut)
+def schedule_interview(interview: InterviewCreate, db: Session = Depends(get_db)):
     """
-    安排面试，触发系统和邮件通知（Mock）
+    安排面试，触发系统和邮件通知并改变候选人状态
     """
-    new_interview = InterviewResponse(
-        id=str(uuid.uuid4()),
-        status="SCHEDULED",
+    # Verify candidate exists
+    candidate = db.query(Candidate).filter(Candidate.id == interview.candidate_id).first()
+    if not candidate:
+        raise HTTPException(status_code=404, detail="Candidate not found")
+        
+    # Verify interviewer exists
+    interviewer = db.query(User).filter(User.id == interview.interviewer_id).first()
+    if not interviewer:
+        raise HTTPException(status_code=404, detail="Interviewer not found")
+
+    new_interview = Interview(
         **interview.dict()
     )
-    interviews_db.append(new_interview)
+    db.add(new_interview)
+    
+    # Update candidate status
+    candidate.status = ProcessStatusEnum.INTERVIEW
+    
+    # Create notification for interviewer
+    notification = Notification(
+        user_id=interviewer.id,
+        type=NotificationTypeEnum.INTERVIEW_SCHEDULED,
+        title="新面试安排",
+        message=f"您有新的面试被安排：候选人 {candidate.name} ({interview.type})",
+        reference_id=str(candidate.id)
+    )
+    db.add(notification)
+    
+    db.commit()
+    db.refresh(new_interview)
     return new_interview
 
-@router.get("/", response_model=List[InterviewResponse])
-def get_interviews():
+@router.get("/", response_model=List[InterviewOut])
+def get_interviews(db: Session = Depends(get_db)):
     """
     获取所有面试安排
     """
-    return interviews_db
+    return db.query(Interview).order_by(Interview.created_at.desc()).all()
 
-class InterviewFeedback(BaseModel):
-    status: str
-    feedback_score: int
-    feedback_content: str
-
-@router.put("/{interview_id}/status", response_model=InterviewResponse)
-def update_interview_status(interview_id: str, feedback: InterviewFeedback):
+@router.put("/{interview_id}/status", response_model=InterviewOut)
+def update_interview_status(interview_id: int, feedback: InterviewFeedback, db: Session = Depends(get_db)):
     """
     更新面试状态与面评反馈
     """
-    for idx, inv in enumerate(interviews_db):
-        if inv.id == interview_id:
-            inv_dict = inv.dict()
-            inv_dict.update(feedback.dict())
-            updated_inv = InterviewResponse(**inv_dict)
-            interviews_db[idx] = updated_inv
-            return updated_inv
-    return None
+    db_interview = db.query(Interview).filter(Interview.id == interview_id).first()
+    if not db_interview:
+        raise HTTPException(status_code=404, detail="Interview not found")
+        
+    update_data = feedback.dict(exclude_unset=True)
+    for key, value in update_data.items():
+        setattr(db_interview, key, value)
+        
+    db.commit()
+    db.refresh(db_interview)
+    return db_interview

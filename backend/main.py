@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from api.candidates import router as candidates_router
 from api.jobs import router as jobs_router
 from api.interviews import router as interviews_router

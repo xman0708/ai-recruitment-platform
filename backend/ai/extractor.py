@@ -1,67 +1,103 @@
 import json
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import PromptTemplate
-from pydantic import BaseModel, Field
+from anthropic import Anthropic
 from core.config import settings
 import traceback
 
-class ResumeExtraction(BaseModel):
-    name: str = Field(description="The full name of the candidate")
-    phone: str = Field(description="The phone number of the candidate")
-    email: str = Field(description="The email address of the candidate")
-    skills: str = Field(description="A comma-separated list of skills")
-    education: str = Field(description="A summary of the candidate's education history")
-    experience: str = Field(description="A summary of the candidate's work experience")
-
 def extract_resume_info(text: str) -> dict:
     """
-    Extracts structured resume information from raw text using Langchain and an LLM.
+    Extracts structured resume information from raw text using Anthropic SDK (Minimax API format).
     """
     try:
         if not settings.LLM_API_KEY:
             print("Warning: LLM_API_KEY not set. Using dummy data fallback.")
-            return {
-                "name": "Dummy Candidate",
-                "phone": "13800138000",
-                "email": "dummy@example.com",
-                "skills": "Python, Vue, FastAPI",
-                "education": "BS in Computer Science",
-                "experience": "5 years of software engineering"
+            return _get_fallback_data()
+        
+        # Initialize Anthropic SDK
+        client = Anthropic(
+            api_key=settings.LLM_API_KEY,
+            base_url=settings.LLM_BASE_URL
+        )
+
+        tools = [
+            {
+                "name": "extract_resume_details",
+                "description": "Extract structured information from a candidate's resume",
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "The full name of the candidate"
+                        },
+                        "phone": {
+                            "type": "string",
+                            "description": "The phone number of the candidate"
+                        },
+                        "email": {
+                            "type": "string",
+                            "description": "The email address of the candidate"
+                        },
+                        "skills": {
+                            "type": "string",
+                            "description": "A comma-separated list of candidate's skills"
+                        },
+                        "education": {
+                            "type": "string",
+                            "description": "A short summary of the candidate's education history (e.g., BS in Computer Science)"
+                        },
+                        "experience": {
+                            "type": "string",
+                            "description": "A short summary of the candidate's work experience (e.g., 5 years of software engineering)"
+                        },
+                        "ai_score": {
+                            "type": "integer",
+                            "description": "A score from 0 to 100 indicating the quality and completeness of the resume"
+                        },
+                        "ai_reasoning": {
+                            "type": "string",
+                            "description": "A short sentence explaining the rationale behind the ai_score"
+                        }
+                    },
+                    "required": ["name", "phone", "email", "skills", "education", "experience", "ai_score", "ai_reasoning"]
+                }
             }
-        
-        # Initialize Google GenAI LLM
-        llm = ChatGoogleGenerativeAI(
+        ]
+
+        messages = [
+            {"role": "user", "content": f"You are an expert HR assistant. Your task is to extract precise information from the following resume text and format it into a structured output.\n\nResume Text:\n\n{text}"}
+        ]
+
+        response = client.messages.create(
             model=settings.LLM_MODEL,
-            google_api_key=settings.LLM_API_KEY,
-            temperature=0  # Low temperature for extraction accuracy
+            max_tokens=1024,
+            messages=messages,
+            tools=tools,
+            temperature=0.1,
+            tool_choice={"type": "tool", "name": "extract_resume_details"}
         )
 
-        # Bind the Pydantic schema for structured generation
-        structured_llm = llm.with_structured_output(ResumeExtraction)
-
-        # Build the prompt
-        prompt = PromptTemplate(
-            input_variables=["text"],
-            template="Extract the following resume information precisely from this text in the original language of the resume:\\n\\n{text}\\n"
-        )
+        # Extract the tool use payload
+        for block in response.content:
+            if block.type == "tool_use" and block.name == "extract_resume_details":
+                return block.input
         
-        # Invoke chain
-        chain = prompt | structured_llm
-        result = chain.invoke({"text": text})
-        
-        return result.model_dump()
+        # Fallback if no tool use found
+        print("No tool use block found in the response")
+        return _get_fallback_data("Model failed to invoke extraction tool.")
         
     except Exception as e:
         print(f"Error during AI Extraction: {e}")
         traceback.print_exc()
-        # Fallback to empty structure to prevent UI crash
-        return {
-            "name": "Extraction Failed",
-            "phone": "",
-            "email": "",
-            "skills": "",
-            "education": "",
-            "experience": "An error occurred during LLM processing."
-        }
+        return _get_fallback_data("An error occurred during LLM processing.")
 
-
+def _get_fallback_data(error_msg: str = "Fallback triggered") -> dict:
+    return {
+        "name": "Extraction Failed",
+        "phone": "",
+        "email": "",
+        "skills": "",
+        "education": "",
+        "experience": error_msg,
+        "ai_score": 0,
+        "ai_reasoning": "解析失败"
+    }

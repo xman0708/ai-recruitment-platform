@@ -97,3 +97,34 @@ class Notification(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
     user = relationship("User")
+
+
+class InterviewStatusEnum(str, enum.Enum):
+    SCHEDULED = "SCHEDULED"
+    COMPLETED = "COMPLETED"
+    CANCELLED = "CANCELLED"
+
+class Interview(Base):
+    __tablename__ = "interviews"
+
+    id = Column(Integer, primary_key=True, index=True)
+    candidate_id = Column(Integer, ForeignKey("candidates.id"), nullable=False)
+    interviewer_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    
+    type = Column(String(50), nullable=False) # e.g. '视频面试' or '线下面试'
+    scheduled_time = Column(String(100), nullable=False)
+    location_or_link = Column(String(255))
+    
+    status = Column(Enum(InterviewStatusEnum), default=InterviewStatusEnum.SCHEDULED)
+    
+    # Feedback
+    feedback_score = Column(Integer)
+    feedback_content = Column(Text)
+    recommendation = Column(String(20)) # HIRE, HOLD, REJECT
+    
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    candidate = relationship("Candidate", backref="interviews")
+    interviewer = relationship("User")
+

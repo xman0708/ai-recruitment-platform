@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { UploadCloud, MoreHorizontal, Sparkles, Filter } from 'lucide-vue-next'
+import { UploadCloud, MoreHorizontal, Sparkles, Filter, CalendarPlus } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 import request from '@/utils/request'
 import { ElMessage } from 'element-plus'
@@ -47,6 +47,51 @@ const viewCandidate = (id: number) => {
   // Navigation to detail
   // router.push(`/candidates/${id}`)
   ElMessage.info(`Coming soon: View details for candidate ID ${id}`)
+}
+
+const showScheduleDialog = ref(false)
+const scheduleForm = ref({
+  candidate_id: 0,
+  candidate_name: '',
+  interviewer_id: 1, // Defaulting to HR mock user 1
+  type: '视频面试',
+  scheduled_time: '',
+  location_or_link: ''
+})
+const isScheduling = ref(false)
+
+const openScheduleInterview = (c: any, event: Event) => {
+  event.stopPropagation() // Prevent triggering viewCandidate
+  scheduleForm.value = {
+    candidate_id: c.id,
+    candidate_name: c.name,
+    interviewer_id: 1,
+    type: '视频面试',
+    scheduled_time: '',
+    location_or_link: ''
+  }
+  showScheduleDialog.value = true
+}
+
+const submitSchedule = async () => {
+  if (!scheduleForm.value.scheduled_time) {
+    ElMessage.warning('请填写面试时间')
+    return
+  }
+  isScheduling.value = true
+  try {
+    await request.post('/interviews/', {
+      ...scheduleForm.value
+    })
+    ElMessage.success('面试安排成功')
+    showScheduleDialog.value = false
+    fetchCandidates() // Refresh pipeline
+  } catch (e) {
+    ElMessage.error('安排面试失败')
+    console.error(e)
+  } finally {
+    isScheduling.value = false
+  }
 }
 </script>
 
@@ -105,15 +150,22 @@ const viewCandidate = (id: number) => {
                 <button class="text-zinc-600 hover:text-zinc-300 opacity-0 group-hover:opacity-100 transition"><MoreHorizontal class="w-4 h-4"/></button>
               </div>
 
-              <!-- AI Score badge -->
-              <div v-if="c.score" class="mb-3 flex items-center gap-2">
-                <div class="text-xs px-2 py-1 rounded bg-gradient-to-r from-primary-600 to-indigo-600 text-white font-medium shadow-sm flex items-center gap-1">
-                  <Sparkles class="w-3 h-3 text-primary-200" />
-                  AI 匹配度 {{ c.score }}
+              <div v-if="c.ai_score" class="mb-3 flex flex-col gap-2">
+                <div class="flex items-center gap-2">
+                  <div class="text-xs px-2 py-1 rounded bg-gradient-to-r from-primary-600 to-indigo-600 text-white font-medium shadow-sm flex items-center gap-1">
+                    <Sparkles class="w-3 h-3 text-primary-200" />
+                    AI 匹配度 {{ c.ai_score }}
+                  </div>
+                  <span class="text-xs" :class="c.ai_score >= 90 ? 'text-emerald-400' : (c.ai_score >= 80 ? 'text-blue-400' : 'text-amber-400')">
+                    {{ c.ai_reasoning || '匹配' }}
+                  </span>
                 </div>
-                <span class="text-xs" :class="c.score >= 90 ? 'text-emerald-400' : (c.score >= 80 ? 'text-blue-400' : 'text-amber-400')">
-                  {{ c.match }}
-                </span>
+                <div v-if="c.status === 'screening'" class="mt-1">
+                  <el-button size="small" type="primary" class="w-full !bg-primary-600/20 hover:!bg-primary-600/30 !border-primary-500/30 !text-primary-400 font-medium" @click="openScheduleInterview(c, $event)">
+                    <template #icon><el-icon><CalendarPlus /></el-icon></template>
+                    安排面试
+                  </el-button>
+                </div>
               </div>
               
               <div v-else class="mb-3 text-xs px-2 py-1 rounded bg-zinc-800/80 text-zinc-400 font-medium inline-block border border-zinc-700 border-dashed">
@@ -121,8 +173,8 @@ const viewCandidate = (id: number) => {
               </div>
 
               <div class="flex items-center justify-between text-xs text-zinc-500 pt-3 border-t border-zinc-800/80">
-                <span class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-zinc-600"></span>{{ c.exp }}经验</span>
-                <span class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-zinc-600"></span>{{ c.edu }}</span>
+                <span class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-zinc-600"></span>{{ c.experience }}</span>
+                <span class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-zinc-600"></span>{{ c.education }}</span>
                 <span class="font-mono">{{ c.id }}</span>
               </div>
 
@@ -132,6 +184,48 @@ const viewCandidate = (id: number) => {
         </div>
       </div>
     </div>
+
+    <!-- Schedule Dialog -->
+    <el-dialog 
+      v-model="showScheduleDialog" 
+      :title="`为 ${scheduleForm.candidate_name} 安排面试`" 
+      width="500px"
+      class="!bg-surface custom-dialog"
+    >
+      <div class="space-y-5 pt-2">
+        <div>
+          <label class="block text-sm font-medium text-zinc-300 mb-2">面试方式</label>
+          <div class="flex gap-4">
+            <el-radio-group v-model="scheduleForm.type">
+              <el-radio label="视频面试" class="!text-zinc-300">视频会议</el-radio>
+              <el-radio label="线下面试" class="!text-zinc-300">现场面试</el-radio>
+            </el-radio-group>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-zinc-300 mb-2">面试时间安排</label>
+          <input type="text" v-model="scheduleForm.scheduled_time" 
+                 class="w-full bg-background border border-zinc-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-primary-500 text-sm placeholder-zinc-600" 
+                 placeholder="例如: 明天 14:00 - 15:00">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-zinc-300 mb-2">
+            {{ scheduleForm.type === '视频面试' ? '会议链接' : '面试地点' }}
+          </label>
+          <input type="text" v-model="scheduleForm.location_or_link" 
+                 class="w-full bg-background border border-zinc-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-primary-500 text-sm placeholder-zinc-600" 
+                 :placeholder="scheduleForm.type === '视频面试' ? 'https://meeting.tencent.com/...' : '如: 总部大楼 A 座 302 会议室'">
+        </div>
+      </div>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="showScheduleDialog = false" class="!bg-background !border-zinc-700 !text-zinc-300 hover:!bg-zinc-800 hover:!text-white">取消</el-button>
+          <el-button type="primary" :loading="isScheduling" @click="submitSchedule" class="!bg-primary-600 hover:!bg-primary-500 !border-none">确认安排</el-button>
+        </span>
+      </template>
+    </el-dialog>
   </div>
 </template>
 

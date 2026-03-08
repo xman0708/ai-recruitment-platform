@@ -11,10 +11,12 @@ def extract_text_from_file(file_path: str) -> str:
     
     try:
         if ext == ".pdf":
-            with open(file_path, "rb") as f:
-                reader = PyPDF2.PdfReader(f)
-                for page in reader.pages:
-                    text += page.extract_text() + "\n"
+            import pdfplumber
+            with pdfplumber.open(file_path) as pdf:
+                for page in pdf.pages:
+                    extracted = page.extract_text()
+                    if extracted:
+                        text += extracted + "\n"
                     
         elif ext == ".docx":
             text = docx2txt.process(file_path)

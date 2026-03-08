@@ -2,39 +2,39 @@
 import { ref } from 'vue'
 import { Video, MapPin, Clock, Calendar as CalendarIcon, MessageSquare, CheckCircle, Search } from 'lucide-vue-next'
 
-const interviews = ref([
-  { 
-    id: 'INT-001', 
-    candidate: '李晓明', 
-    job: '高级前端开发工程师（Vue3）',
-    type: '视频面试',
-    time: '今天 14:00 - 15:00',
-    interviewer: '张技术总监',
-    status: 'SCHEDULED', // SCHEDULED, COMPLETED
-    link: 'https://meeting.tencent.com/p/123456789'
-  },
-  { 
-    id: 'INT-002', 
-    candidate: '王梦琪', 
-    job: 'Python 后端架构师',
-    type: '线下面试',
-    time: '明天 10:30 - 11:30',
-    interviewer: '刘架构师',
-    status: 'SCHEDULED',
-    link: '总部大楼 A 座 302 会议室'
-  },
-  { 
-    id: 'INT-003', 
-    candidate: '陈思宇', 
-    job: '高级前端开发工程师（Vue3）',
-    type: '视频面试',
-    time: '昨天 16:00 - 17:00',
-    interviewer: '王前端组长',
-    status: 'COMPLETED',
-    link: '-'
-  }
-])
+import request from '@/utils/request'
+import { ElMessage } from 'element-plus'
+import { onMounted } from 'vue'
 
+const interviews = ref<any[]>([])
+const isLoading = ref(false)
+
+const fetchInterviews = async () => {
+  isLoading.value = true
+  try {
+    const data = await request.get('/interviews/')
+    // Mangle DB data to fit UI expectations for now
+    interviews.value = (data as unknown as any[]).map(i => ({
+      id: i.id,
+      candidate: i.candidate?.name || '未知候选人',
+      job: i.candidate?.job?.title || '未知岗位',
+      type: i.type,
+      time: i.scheduled_time,
+      interviewer: i.interviewer?.username || 'HR',
+      status: i.status,
+      link: i.location_or_link || '-'
+    }))
+  } catch (e) {
+    ElMessage.error('无法加载面试日程')
+    console.error(e)
+  } finally {
+    isLoading.value = false
+  }
+}
+
+onMounted(() => {
+  fetchInterviews()
+})
 const showFeedbackDialog = ref(false)
 const feedbackForm = ref({
   score: 0,
@@ -48,11 +48,22 @@ const openFeedback = (id: string) => {
   showFeedbackDialog.value = true
 }
 
-const submitFeedback = () => {
-  const intw = interviews.value.find(i => i.id === activeInterviewId.value)
-  if (intw) intw.status = 'COMPLETED'
-  showFeedbackDialog.value = false
-  feedbackForm.value = { score: 0, content: '', recommendation: 'HIRE' }
+const submitFeedback = async () => {
+  try {
+    await request.put(`/interviews/${activeInterviewId.value}/status`, {
+      status: 'COMPLETED',
+      feedback_score: feedbackForm.value.score,
+      feedback_content: feedbackForm.value.content,
+      recommendation: feedbackForm.value.recommendation
+    })
+    ElMessage.success('面评提交成功')
+    showFeedbackDialog.value = false
+    feedbackForm.value = { score: 0, content: '', recommendation: 'HIRE' }
+    fetchInterviews() // Reload
+  } catch (e) {
+    ElMessage.error('面评提交失败')
+    console.error(e)
+  }
 }
 </script>
 
